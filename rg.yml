@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: ansible
+        subscription_id: ac9c8de9-31bd-47d6-8735-595362627cad
+        client_id: 1d61ddd6-bf34-435a-913e-26eced220a11
+        secret: OoIec29EMltRJKOUez0w4BLKCppmWknsNy6X4CqtE2o=
+        tenant: 740f3e6a-0a68-4a39-9c89-4ab87255dc15
+        location: eastasia
+      register: rg
+    - debug:
+        var: rg

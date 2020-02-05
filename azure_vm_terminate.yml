@@ -1,0 +1,9 @@
+- name: Remove Azure VM
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Remove the virtual machine
+    azure_rm_virtualmachine:
+      resource_group: ansible
+      name: ansibleVM
+      state: absent
